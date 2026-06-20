@@ -7,7 +7,7 @@ A timestamp-synced lyric display for the song "Libu-Libong Buwan", built on an A
 Each word in the lyrics is stored with its own timestamp (in milliseconds) and a flag marking whether it starts a new line. As time progresses, the matching word is pushed onto the LCD — filling the first row, then the second — creating a karaoke-style scrolling lyric effect.
 
 ## Hardware Used
-<img width="964" height="857" alt="image" src="https://github.com/user-attachments/assets/797ccc91-04b1-4724-ae7a-8decbfe99e32" />
+<img width="699" height="638" alt="image" src="https://github.com/user-attachments/assets/7e494cd4-429d-4461-91e6-ccbd466cf55f" />
 
 - **Arduino Uno R3** (economy/clone variant — requires the **CH340 driver** to be installed on your PC before it gets detected)
 - **16x2 LCD screen with I2C backpack** (the I2C module had to be soldered onto the LCD manually)
