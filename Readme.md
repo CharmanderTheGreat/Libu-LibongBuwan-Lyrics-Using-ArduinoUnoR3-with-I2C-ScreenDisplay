@@ -8,9 +8,9 @@ Each word in the lyrics is stored with its own timestamp (in milliseconds) and a
 
 ## Hardware Used
 
-- **Arduino Uno R3** (economy/clone variant — requires the **CH340 USB driver** to be installed on your PC before it gets detected on your laptop/desktop)
+- **Arduino Uno R3** (economy/clone variant — requires the **CH340 driver** to be installed on your PC before it gets detected)
 - **16x2 LCD screen with I2C backpack** (the I2C module had to be soldered onto the LCD manually)
-- **4x jumper wires** (for I2C connection)
+- **4x female-to-male jumper wires** (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
 
 ## Wiring
 
@@ -25,33 +25,40 @@ I2C only needs 4 connections:
 
 > Default I2C address used in code: `0x27`. If your screen doesn't light up or show text, run an I2C scanner sketch first to confirm the actual address (some modules use `0x3F` instead).
 
-## Software Requirements
-
-- [Arduino IDE](https://www.arduino.cc/en/software) (2.x) — used for compiling and uploading
-- **CH340 driver** — needed for the economy/clone Uno R3 to be recognized via USB
-- **LiquidCrystal_I2C** library — install via Arduino IDE: `Sketch > Include Library > Manage Libraries` → search "LiquidCrystal I2C" → install
-
 ## Setup
 
-1. Install the CH340 driver (if your PC doesn't already detect the board — you only need to download this if you bought the economy/clone variant, since it's much cheaper).
-2. Solder the I2C backpack onto the LCD screen (if not pre-assembled — I suggest buying the pre-soldered one so you don't need to do the soldering yourself).
+1. Install the CH340 driver — only needed if you bought the economy/clone Uno R3, since it's cheaper but requires this extra step.
+2. Solder the I2C backpack onto the LCD screen, if not pre-assembled. (Tip: buying a pre-soldered LCD module saves you this step.)
 3. Wire the LCD to the Arduino following the table above.
 4. Open `[sketch-filename].ino` in Arduino IDE.
-5. Install the `LiquidCrystal_I2C` library via Library Manager.
+5. Install the `LiquidCrystal_I2C` library via `Sketch > Include Library > Manage Libraries` → search "LiquidCrystal I2C" → install.
 6. Select **Board: Arduino Uno** and the correct **COM Port**.
 7. Upload the sketch.
 
 ## Usage
 
-This is a **visual-only** display — there's no actual audio playback, just the lyrics scrolling in sync with timestamps. To start/replay the sequence from the beginning, you have a few options:
+This is a **visual-only** display — there's no actual audio playback, just the lyrics scrolling in sync with timestamps. To start or replay the sequence from the beginning, reset the board using any of the following:
 
-- **Press the reset button** (the red button on the Arduino board itself) — this restarts the board and replays the sequence from the start.
-- **Re-upload the sketch** — re-uploading the code via Arduino IDE also restarts the board, which restarts the lyric sequence.
-- **Plug and play** — unplug and replug the USB/power, which resets the board the same way.
+- **Reset button** — the red button on the Arduino board itself.
+- **Re-upload the sketch** — re-uploading via Arduino IDE also restarts the board.
+- **Plug and play** — unplug and replug the USB/power.
 
-There's no separate "play" button in software — any of the above simply resets the board, which is what triggers the sequence to play again.
+There's no separate "play" command in software — resetting the board is what triggers the sequence to play again.
 
-## Notes
+## Limitations / Out of Scope
 
-- Built using an **economy/clone Uno R3**, so driver installation (CH340) is required — official Uno boards don't need this extra step.
-- I2C backpack was soldered manually onto the LCD.
+This project is intentionally simple — the following are **not** included:
+
+- **No on/off switch** — the board only runs/resets via power plug or the reset button.
+- **No sound/audio output** — visual-only; does not play or sync with actual audio.
+- **No external "play" button** — playback restarts only by resetting the board.
+
+## Software & Credits
+
+| What | Link | Author / Source |
+|------|------|------------------|
+| Arduino IDE | [arduino.cc/en/software](https://www.arduino.cc/en/software) | Arduino |
+| CH340 Driver | [wch-ic.com/downloads/CH341SER_EXE.html](https://www.wch-ic.com/downloads/CH341SER_EXE.html) | Nanjing Qinheng Microelectronics (WCH) — official manufacturer of the CH340/CH341 chip |
+| LiquidCrystal_I2C Library | [github.com/johnrickman/LiquidCrystal_I2C](https://github.com/johnrickman/LiquidCrystal_I2C) | Author: Frank de Brabander · Maintainer: Marco Schwartz |
+
+> Install LiquidCrystal_I2C directly through Arduino IDE's Library Manager instead of downloading it manually — search "LiquidCrystal I2C" and install the one by Frank de Brabander.
