@@ -13,13 +13,13 @@ Each word in the lyrics is stored with its own timestamp (in milliseconds) and a
 
 - **Arduino Uno R3** — you may choose either the official board or the economy/clone variant (the clone requires the **CH340 driver** to be installed on your PC before it gets detected)
 
-<img width="400" height="400" alt="16x2 I2C LCD Screen" src="https://github.com/user-attachments/assets/5683a6b4-e766-432f-a5c6-bb7866eedafe" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/eceb8b83-965c-4ff5-8600-a5cba77cee0b" />
+
 
 - **16x2 LCD screen with I2C backpack** — make sure to get a screen that comes with (or includes) an I2C module, since plain LCDs are often sold without it. It's recommended to buy one that's already pre-soldered to skip the soldering step.
 
-<img width="400" height="400" alt="Female-to-male jumper wires" src="https://github.com/user-attachments/assets/496a058f-7bbd-4cac-9fe9-464326c28bdf" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/094048b2-fa7a-40db-835c-37d760e47b1c" />
 
-- **4x female-to-male jumper wires** (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
 
 - **4x female-to-male jumper wires** — (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
 
