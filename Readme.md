@@ -73,3 +73,14 @@ This project is intentionally simple — the following are **not** included:
 | LiquidCrystal_I2C Library | [github.com/johnrickman/LiquidCrystal_I2C](https://github.com/johnrickman/LiquidCrystal_I2C) | Author: Frank de Brabander · Maintainer: Marco Schwartz |
 
 > Install LiquidCrystal_I2C directly through Arduino IDE's Library Manager instead of downloading it manually — search "LiquidCrystal I2C" and install the one by Frank de Brabander.
+
+## What You'll Learn / Skills Gained
+
+Replicating or studying this project touches on a few practical skills:
+
+- **I2C communication** — wiring and addressing an I2C device (LCD) with only 4 connections.
+- **Basic soldering** — attaching an I2C backpack module onto an LCD screen.
+- **Driver troubleshooting** — installing and recognizing USB-to-serial drivers (CH340) for clone microcontroller boards.
+- **Timestamp-based logic** — syncing output (lyrics) to elapsed time using `millis()`, instead of relying on delays.
+- **Library usage** — installing and using a third-party Arduino library (`LiquidCrystal_I2C`) via the Library Manager.
+- **Hardware-software integration** — connecting a physical display to custom logic that controls what's shown and when.
