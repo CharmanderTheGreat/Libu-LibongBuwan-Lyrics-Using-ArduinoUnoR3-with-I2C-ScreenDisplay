@@ -9,7 +9,7 @@ Each word in the lyrics is stored with its own timestamp (in milliseconds) and a
 ## Hardware Used
 <img width="699" height="638" alt="image" src="https://github.com/user-attachments/assets/7e494cd4-429d-4461-91e6-ccbd466cf55f" />
 
-- **Arduino Uno R3** (economy/clone variant — requires the **CH340 driver** to be installed on your PC before it gets detected)
+- **Arduino Uno R3** (economy/clone variant — you may choose either the official board or the economy/clone variant (the clone requires the **CH340 driver** to be installed on your PC before it gets detected)
 - **16x2 LCD screen with I2C backpack** (the I2C module had to be soldered onto the LCD manually)
 - **4x female-to-male jumper wires** (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
 
