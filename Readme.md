@@ -7,11 +7,21 @@ A timestamp-synced lyric display for the song "Libu-Libong Buwan", built on an A
 Each word in the lyrics is stored with its own timestamp (in milliseconds) and a flag marking whether it starts a new line. As time progresses, the matching word is pushed onto the LCD — filling the first row, then the second — creating a karaoke-style scrolling lyric effect.
 
 ## Hardware Used
-<img width="699" height="638" alt="image" src="https://github.com/user-attachments/assets/7e494cd4-429d-4461-91e6-ccbd466cf55f" />
 
-- **Arduino Uno R3** (economy/clone variant — you may choose either the official board or the economy/clone variant (the clone requires the **CH340 driver** to be installed on your PC before it gets detected)
-- **16x2 LCD screen with I2C backpack** (the I2C module had to be soldered onto the LCD manually)
+
+<img width="400" height="400" alt="Arduino Uno R3" src="https://github.com/user-attachments/assets/7e494cd4-429d-4461-91e6-ccbd466cf55f" />
+
+- **Arduino Uno R3** — you may choose either the official board or the economy/clone variant (the clone requires the **CH340 driver** to be installed on your PC before it gets detected)
+
+<img width="400" height="400" alt="16x2 I2C LCD Screen" src="https://github.com/user-attachments/assets/5683a6b4-e766-432f-a5c6-bb7866eedafe" />
+
+- **16x2 LCD screen with I2C backpack** — make sure to get a screen that comes with (or includes) an I2C module, since plain LCDs are often sold without it. It's recommended to buy one that's already pre-soldered to skip the soldering step.
+
+<img width="400" height="400" alt="Female-to-male jumper wires" src="https://github.com/user-attachments/assets/496a058f-7bbd-4cac-9fe9-464326c28bdf" />
+
 - **4x female-to-male jumper wires** (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
+
+- **4x female-to-male jumper wires** — (female end connects to the LCD's I2C pins, male end connects to the Arduino's pin headers)
 
 ## Wiring
 
