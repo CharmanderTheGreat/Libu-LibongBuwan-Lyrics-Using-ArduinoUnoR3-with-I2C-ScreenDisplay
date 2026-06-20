@@ -1,6 +1,6 @@
 # Libu-LibongBuwan-Lyrics-Using-ArduinoUnoR3-with-I2C-ScreenDisplay
 
-A timestamp-synced lyric display for the song **"Libu-Libong Buwan"**, built on an Arduino Uno R3 and a 16x2 I2C LCD screen. Words appear on the screen in sync with playback time, scrolling across two rows as the song plays.
+A timestamp-synced lyric display for the song "Libu-Libong Buwan", built on an Arduino Uno R3 and a 16x2 I2C LCD screen. Words appear on the screen in sync with playback time, scrolling across two rows as the song plays.
 
 ## How It Works
 
@@ -8,10 +8,9 @@ Each word in the lyrics is stored with its own timestamp (in milliseconds) and a
 
 ## Hardware Used
 
-- **Arduino Uno R3** (economy/clone variant — requires the **CH340 USB driver** to be installed on your PC before it gets detected)
+- **Arduino Uno R3** (economy/clone variant — requires the **CH340 USB driver** to be installed on your PC before it gets detected on your laptop/desktop)
 - **16x2 LCD screen with I2C backpack** (the I2C module had to be soldered onto the LCD manually)
 - **4x jumper wires** (for I2C connection)
-- Breadboard *(optional, depende sa setup mo — [edit kung meron])*
 
 ## Wiring
 
@@ -34,8 +33,8 @@ I2C only needs 4 connections:
 
 ## Setup
 
-1. Install the CH340 driver (if your PC doesn't already detect the board).
-2. Solder the I2C backpack onto the LCD screen (if not pre-assembled).
+1. Install the CH340 driver (if your PC doesn't already detect the board — you only need to download this if you bought the economy/clone variant, since it's much cheaper).
+2. Solder the I2C backpack onto the LCD screen (if not pre-assembled — I suggest buying the pre-soldered one so you don't need to do the soldering yourself).
 3. Wire the LCD to the Arduino following the table above.
 4. Open `[sketch-filename].ino` in Arduino IDE.
 5. Install the `LiquidCrystal_I2C` library via Library Manager.
@@ -44,13 +43,15 @@ I2C only needs 4 connections:
 
 ## Usage
 
-[Idagdag mo dito kung paano i-trigger/i-start yung playback — hal. paano siya naka-sync sa actual audio, may button ba, o auto-start pag naka-plug?]
+This is a **visual-only** display — there's no actual audio playback, just the lyrics scrolling in sync with timestamps. To start/replay the sequence from the beginning, you have a few options:
+
+- **Press the reset button** (the red button on the Arduino board itself) — this restarts the board and replays the sequence from the start.
+- **Re-upload the sketch** — re-uploading the code via Arduino IDE also restarts the board, which restarts the lyric sequence.
+- **Plug and play** — unplug and replug the USB/power, which resets the board the same way.
+
+There's no separate "play" button in software — any of the above simply resets the board, which is what triggers the sequence to play again.
 
 ## Notes
 
 - Built using an **economy/clone Uno R3**, so driver installation (CH340) is required — official Uno boards don't need this extra step.
 - I2C backpack was soldered manually onto the LCD.
-
-## License
-
-[Optional — MIT, or wala kung personal project lang]
